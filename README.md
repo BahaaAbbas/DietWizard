@@ -1,0 +1,2 @@
+# DietWizard
+Software Graduation Project
