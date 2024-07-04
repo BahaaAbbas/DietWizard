@@ -1,0 +1,92 @@
+<!-- views/exercises.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Exercises</title>
+    <style>
+        html, body, h1, h2, h3, h4 {
+            font-family: "Lato", sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        .mySlides {
+            display: none;
+        }
+        .w3-tag, .fa {
+            cursor: pointer;
+        }
+        .w3-tag {
+            height: 15px;
+            width: 15px;
+            padding: 0;
+            margin-top: 6px;
+        }
+        /* CSS to resize images */
+        .exercise-image {
+            width: 200px; /* Set the width of the image */
+            height: auto; /* Maintain aspect ratio */
+        }
+        /* Additional styles for page layout and scrolling */
+        .content {
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .pagination {
+            margin: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="w3-top">
+        <div class="w3-row w3-large w3-light-grey">
+            <div class="w3-col s3">
+                <a href="/ControlPanel" class="w3-button w3-block">Home</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="/CategoryExercise" class="w3-button w3-block">Exercises</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="/home" class="w3-button w3-block">Products</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="/CategoryUserAndCoach" class="w3-button w3-block">Users & Coaches</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="content">
+        <h1>Exercise List</h1>
+        <ul>
+            <% exercises.forEach(function(exercise) { %>
+                <li>
+                    <!-- Apply the 'exercise-image' class to the image -->
+                    <img class="exercise-image" src="<%= exercise.image %>" alt="<%= exercise.name %>">
+                    <p>id exercise: <%= exercise.id %> /  name exercise:  <%= exercise.name %>  /  time exercise: <%= exercise.time %> /  description exercise:  <%= exercise.description %> /  calories exercise:  <%= exercise.calories %></p>
+                </li>
+            <% }); %>
+        </ul>
+
+        <div class="pagination">
+            <% if (currentPage > 1) { %>
+                <button onclick="location.href='/exercises?page=<%= currentPage - 1 %>'" style="background-color: #2196F3; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;">Previous</button>
+            <% } %>
+
+            <% if (currentPage < totalPages) { %>
+                <button onclick="location.href='/exercises?page=<%= currentPage + 1 %>'" style="background-color: #2196F3; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;">Next</button>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Exercise Filters</title>
+    <style>
+        /* Resetting default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            font-family: "Lato", sans-serif;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        .content {
+            padding: 20px;
+            overflow-y: auto;
+        }
+        body {
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .w3-top {
+            z-index: 1;
+        }
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 5px;
+            margin: 0 auto;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            height: auto;
+        }
+        li {
+            padding: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #007bff; /* Change to desired hover color */
+        }
+        .exercise-image {
+            width: 290px; /* Set the width of the image */
+            height: 300px; /* Maintain aspect ratio */
+            border-radius: 50%;
+        }
+        .exercise-wrapper {
+            text-align: center;
+        }
+        @media screen and (max-width: 600px) {
+            ul {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="w3-top">
+        <div class="w3-row w3-large w3-light-grey">
+            <div class="w3-col s3">
+                <a href="/ControlPanel" class="w3-button w3-block">Home</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="/CategoryExercise" class="w3-button w3-block">Exercises</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="/home" class="w3-button w3-block">Products</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="/CategoryUserAndCoach" class="w3-button w3-block">Users & Coaches</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Exercise Filters</h1>
+        <ul>
+            <div class="exercise-wrapper">
+                <a href="/exercises/Abs">
+                    <img src="human-abs-vector-cartoon-illustration-600w-2128378241.webp" alt="Abs" class="exercise-image">
+                </a>
+                <li><a href="/exercises/Abs">Abs</a></li>
+            </div>
+            <div class="exercise-wrapper">
+                <a href="/exercises/Arms">
+                    <img src="arms.jpg" alt="Arms" class="exercise-image">
+                </a>
+                <li><a href="/exercises/Arms">Arms</a></li>
+            </div>
+            <div class="exercise-wrapper">
+                <a href="/exercises/Back">
+                    <img src="back.jpg" alt="Back" class="exercise-image">
+                </a>
+                <li><a href="/exercises/Back">Back</a></li>
+            </div>
+            <div class="exercise-wrapper">
+                <a href="/exercises/Chest">
+                    <img src="chest_0.jpg" alt="Chest" class="exercise-image">
+                </a>
+                <li><a href="/exercises/Chest">Chest</a></li>
+            </div>
+            <div class="exercise-wrapper">
+                <a href="/exercises/Legs">
+                    <img src="legs.png" alt="Legs" class="exercise-image">
+                </a>
+                <li><a href="/exercises/Legs">Legs</a></li>
+            </div>
+            <div class="exercise-wrapper">
+                <a href="/exercises/Shoulders">
+                    <img src="shoulders_0.jpg" alt="Shoulders" class="exercise-image">
+                </a>
+                <li><a href="/exercises/Shoulders">Shoulders</a></li>
+            </div>
+        </ul>
+    </div>
+</body>
+</html>

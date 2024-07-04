@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Home </title>
+</head>
+<style>
+    html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+.mySlides {display:none}
+.w3-tag, .fa {cursor:pointer}
+.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+</style>
+<body>
+
+
+
+    <div class="w3-top">
+        <div class="w3-row w3-large w3-light-grey">
+          <div class="w3-col s3">
+            <a href="/ControlPanel" class="w3-button w3-block">Home</a>
+          </div>
+          <div class="w3-col s3">
+            <a href="/CategoryExercise" class="w3-button w3-block">Excercises</a>
+          </div>
+          <div class="w3-col s3">
+            <a href="/home" class="w3-button w3-block">Products</a>
+          </div>
+          <div class="w3-col s3">
+            <a href="/CategoryUserAndCoach" class="w3-button w3-block">Users & Coaches</a>
+          </div>
+           
+        </div>
+        
+      </div>
+      <br>
+      <br>
+
+<div>
+    <h1>Welcome To Products Page </h1>
+</div>
+    
+
+<div>
+    <h2>Add Product</h2>
+ 
+    <form action="/addproductweb" method="post" class="product" enctype="multipart/form-data">
+        <!-- Product Details -->
+        <label for="namepro">Name Product</label>  
+        <input type="text" name="nameproduct" required>
+        <label for="priceprod">Price Product</label>
+        <input type="text" name="priceproduct" required>
+
+        <label for="descriptionproduct">Description Product</label>
+        <input type="text" name="descriptionproduct" required>
+    
+        <!-- Image Upload -->
+        <label for="image">Upload Image</label>
+        <input type="file" name="image">
+    
+        <!-- Submit Button -->
+        <button type="submit" style="background-color: #2196F3">Add Product</button>
+    </form>
+    
+
+
+
+</div>
+
+<!-- search -->
+<div>
+<h2>Search Product</h2>
+
+<form action="/searchpro" method="post">
+    <label for="nameofproduct">Name of Product</label>  
+    <input type="text" name="nameofproduct" >
+    <!-- <label for="priceofproduct">Price of product</label>
+    <input type="text" name="priceofproduct"> -->
+    <button type="submit" style="background-color: #2196F3">Search Product</button> 
+    
+</form>
+
+
+</div>
+<!-- search -->
+
+
+
+<!-- Delete -->
+
+
+<div>
+    <h2>Delete Product</h2>
+    
+    <form action="/deletepro" method="post">
+        <label for="deleteproduct">Name of Product</label>  
+        <input type="text" name="deleteproduct" required>
+        <label for="pricedelete">Price of product</label>
+        <input type="text" name="pricedelete" required>
+        <button type="submit" style="background-color: #2196F3">Delete Product</button> 
+        
+    </form>
+    
+    
+    </div>
+
+
+
+<!-- Delete -->
+
+
+
+
+<!-- Update -->
+
+
+<div>
+    <h2>Update Price Product</h2>
+    
+    <form action="/updatepro" method="post">
+        <label for="nameproduct">Name of Product</label>  
+        <input type="text" name="nameproduct" required>
+        <label for="oldprice">Price of product</label>
+        <input type="text" name="oldprice" required>
+        <label for="newprice">New Price of product</label>
+        <input type="text" name="newprice" required>
+        <button type="submit" style="background-color: #2196F3">Update Product</button> 
+        
+    </form>
+    
+    
+    </div>
+
+
+
+
+<!-- Update -->
+
+
+
+
+
+
+<footer class="w3-container w3-padding-32 w3-light-grey w3-center">
+    <!-- <h4>Footer</h4> -->
+    <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <div class="w3-xlarge w3-section">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+    <!-- <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p> -->
+  </footer>
+  
+
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!-- views/exerciseList.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Exercise List</title>
+    <style>
+        /* Style for the exercise list */
+        /* #exercise-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        } */
+
+        /* Style for each exercise item */
+        .exercise-item {
+            margin: 10px;
+            
+        }
+
+        /* Style for the exercise image */
+        .exercise-image {
+            width: 200px; /* Set the width of the image */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <h1>Exercise List</h1>
+    <div id="exercise-list">
+        <% exercises.forEach(function(exercise) { %>
+            <div class="exercise-item">
+                <img class="exercise-image" src="<%= exercise.image %>" alt="<%= exercise.name %>">
+                <!-- <p><%= exercise.name %></p> -->
+                <p>id exercise: <%= exercise.id %> /  name exercise:  <%= exercise.name %>  /  time exercise: <%= exercise.time %> /  description exercise:  <%= exercise.description %> /  calories exercise:  <%= exercise.calories %></p>
+
+                
+            </div>
+            
+        <% }); %>
+        <button onclick="goBack()" style="background-color: #2196F3">Exercise Filters</button>
+    </div>
+    <script>
+        // JavaScript function to go back one page
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

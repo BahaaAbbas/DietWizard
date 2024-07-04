@@ -1,0 +1,719 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Coaches</title>
+    <style>
+        .card {
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            display: inline-block;
+            text-align: center;
+         
+        }
+        .card img {
+            width: 100%;
+            height: 250px;
+        }
+        h2{
+                padding-top: 0px;     
+                padding-bottom: 3px;
+        }
+        p{
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+     
+
+
+
+    <h1>Coaches with Images</h1>
+    <div class="container">
+        <% coaches.forEach(coach => { %>
+            <div class="card">
+                <h2><%= coach.username %></h2>
+                <p>First Name: <%= coach.firstname %></p>
+                <p>Last Name: <%= coach.lastname %></p>
+                <p>Email: <%= coach.email %></p>
+                <p>Age: <%= coach.age %></p>
+                <p>Gender: <%= coach.gender %></p>
+                <p> Years  of Experiences: <%= coach.yearsexperiences %></p>
+                <p>Qualifications: <%= coach.qualifications %></p>
+                <p>Weight: <%= coach.Weight %></p>
+                <p>Height: <%= coach.height %></p>
+                <p>Number  Of Trainees: <%= coach.Numberoftrainees %></p>
+                <% if (coach.data) { %>
+                    <img src="data:<%= coach.contentType %>;base64,<%= coach.data.toString('base64') %>" alt="coach Image">
+                <% } else { %>
+                    <p>No image available</p>
+                <% } %>
+            </div>
+        <% }) %>
+    </div>
+    
+
+</body>
+</html>
+
+
+ 
+
+
+
+
+
+
+  -->
+
+
+
+
+
+
+
+
+  <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Coaches</title>
+    <style>
+        .card-container {
+            perspective: 1000px;
+            margin: 10px;
+            display: inline-block;
+        }
+        .card {
+            width: 250px;
+            height: 500px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        .card img {
+            width: 100%;
+            height: 250px;
+            margin-top: 50px;
+        }
+        .card h2 {
+            padding-top: 0px;     
+            padding-bottom: 3px;
+        }
+        .card .front, .card .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .card .front {
+            z-index: 2;
+        }
+        .card .back {
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .card-container.flipped .card {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <h1>Coaches with Images</h1>
+    <div class="container">
+        <% coaches.forEach(coach => { %>
+            <div class="card-container" onclick="flipCard(this)">
+                <div class="card">
+                    <div class="front">
+                        <h2><%= coach.username %></h2>
+                        <% if (coach.data) { %>
+                            <img src="data:<%= coach.contentType %>;base64,<%= coach.data.toString('base64') %>" alt="coach Image">
+                        <% } else { %>
+                            <p>No image available</p>
+                        <% } %>
+                    </div>
+                    <div class="back">
+                        <p>First Name: <%= coach.firstname %></p>
+                        <p>Last Name: <%= coach.lastname %></p>
+                        <p>Email: <%= coach.email %></p>
+                        <p>Age: <%= coach.age %></p>
+                        <p>Gender: <%= coach.gender %></p>
+                        <p>Years of Experiences: <%= coach.yearsexperiences %></p>
+                        <p>Qualifications: <%= coach.qualifications %></p>
+                        <p>Weight: <%= coach.Weight %></p>
+                        <p>Height: <%= coach.height %></p>
+                        <p>Number Of Trainees: <%= coach.Numberoftrainees %></p>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+    
+    <script>
+        function flipCard(cardContainer) {
+            cardContainer.classList.toggle('flipped');
+        }
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Coaches</title>
+    <style>
+        .card-container {
+            perspective: 1000px;
+            margin: 10px;
+            display: inline-block;
+        }
+        .card {
+            width: 250px;
+            height: 580px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        .card img {
+            width: 100%;
+            height: 250px;
+            margin-top: 50px;
+        }
+        .card h2 {
+            padding-top: 0px;     
+            padding-bottom: 3px;
+        }
+        .card .front, .card .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .card .front {
+            z-index: 2;
+        }
+        .card .back {
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .card-container.flipped .card {
+            transform: rotateY(180deg);
+        }
+        .details-btn {
+            cursor: pointer;
+            padding: 5px 10px;
+            margin-top: 40px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Coaches with Images</h1>
+    <div class="container">
+        <% coaches.forEach(coach => { %>
+            <div class="card-container">
+                <div class="card">
+                    <div class="front">
+                        <h2><%= coach.username %></h2>
+                        <% if (coach.data) { %>
+                            <img src="data:<%= coach.contentType %>;base64,<%= coach.data.toString('base64') %>" alt="coach Image">
+                        <% } else { %>
+                            <p>No image available</p>
+                        <% } %>
+                        <button class="details-btn" onclick="flipCard(event)">Details</button>
+                    </div>
+                    <div class="back">
+                        <p>First Name: <%= coach.firstname %></p>
+                        <p>Last Name: <%= coach.lastname %></p>
+                        <p>Email: <%= coach.email %></p>
+                        <p>Age: <%= coach.age %></p>
+                        <p>Gender: <%= coach.gender %></p>
+                        <p>Years of Experiences: <%= coach.yearsexperiences %></p>
+                        <p>Qual.: <%= coach.qualifications %></p>
+                        <p>Weight: <%= coach.Weight %></p>
+                        <p>Height: <%= coach.height %></p>
+                        <p>Number Of Trainees: <%= coach.Numberoftrainees %></p>
+                        <button class="details-btn" onclick="flipCard(event)">Back</button>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+    
+    <script>
+        function flipCard(event) {
+            event.stopPropagation();
+            const cardContainer = event.target.closest('.card-container');
+            cardContainer.classList.toggle('flipped');
+        }
+    </script>
+</body>
+</html> -->
+
+
+
+
+<!-- 
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Show Coaches</title>
+    <style>
+                html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+        .mySlides {display:none}
+        .w3-tag, .fa {cursor:pointer}
+        .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+
+        .card-container {
+            perspective: 1000px;
+            margin: 10px;
+            display: inline-block;
+        }
+        .card {
+            width: 300px;
+            height: 650px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        .card img {
+            width: 100%;
+            height: 250px;
+            margin-top: 50px;
+        }
+        .card h2 {
+            padding-top: 0px;     
+            padding-bottom: 3px;
+        }
+        .card .front, .card .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            /* border: 1px solid #ccc; */
+            /* border-radius: 5px; */
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .card .front {
+            z-index: 2;
+
+        }
+        .card .back {
+           
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .card-container.flipped .card {
+            transform: rotateY(180deg);
+        }
+        .details-btn {
+            cursor: pointer;
+            padding: 5px 10px;
+            margin-top: 40px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 3px;
+        }
+        .action-btn {
+            cursor: pointer;
+            padding: 5px 10px;
+            margin-top: 10px;
+            border: none;
+            background-color: #28a745; /* Green */
+            color: white;
+            border-radius: 3px;
+            width: auto;
+        }
+        .delete-btn {
+            background-color: #dc3545; /* Red */
+        }
+        /* .container {
+            height: auto;  
+            overflow-y: auto;  
+            display: flex;
+            flex-wrap: wrap;
+             
+            align-items: flex-start;
+        } */
+    </style>
+</head>
+<body>
+    <div class="w3-top">
+        <div class="w3-row w3-large w3-light-grey">
+          <div class="w3-col s3">
+            <a href="/ControlPanel" class="w3-button w3-block">Home</a>
+          </div>
+          <div class="w3-col s3">
+            <a href="/CategoryExercise" class="w3-button w3-block">Exercises</a>
+          </div>
+          <div class="w3-col s3">
+            <a href="/home" class="w3-button w3-block">Products</a>
+          </div>
+          <div class="w3-col s3">
+            <a href="/CategoryUserAndCoach" class="w3-button w3-block">Users & Coaches</a>
+        </div>
+    </div>
+    
+    <h1>Coaches with Images</h1>
+    <br>
+    <br>
+
+
+    <div class="container">
+        <% coaches.forEach(coach => { %>
+            <div class="card-container">
+                <div class="card">
+                    <div class="front">
+                        <h2><%= coach.username %></h2>
+                        <% if (coach.data) { %>
+                            <img src="data:<%= coach.contentType %>;base64,<%= coach.data.toString('base64') %>" alt="coach Image">
+                        <% } else { %>
+                            <p>No image available</p>
+                        <% } %>
+                        <button class="details-btn" onclick="flipCard(event)">Details</button>
+                    </div>
+                    <div class="back">
+                        <p>First Name: <%= coach.firstname %></p>
+                        <p>Last Name: <%= coach.lastname %></p>
+                        <p>Email: <%= coach.email %></p>
+                        <p>Age: <%= coach.age %></p>
+                        <p>Gender: <%= coach.gender %></p>
+                        <p>Years of Experiences: <%= coach.yearsexperiences %></p>
+                        <p>Qual.: <%= coach.qualifications %></p>
+                        <p>Weight: <%= coach.Weight %></p>
+                        <p>Height: <%= coach.height %></p>
+                        <p>Number Of Trainees: <%= coach.Numberoftrainees %></p>
+                        <p>Activate: <%= coach.Activate %></p>
+                        <button class="action-btn" onclick="ActivateCoach('<%= coach.idcoach %>')">Activate Coach</button>
+                        <button class="action-btn delete-btn" onclick="deleteCoach('<%= coach.idcoach %>')">Delete Coach</button>
+                        <button class="details-btn" onclick="flipCard(event)">Back</button>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+    
+    <script>
+        function flipCard(event) {
+            event.stopPropagation();
+            const cardContainer = event.target.closest('.card-container');
+            cardContainer.classList.toggle('flipped');
+        }
+
+        async function ActivateCoach(idcoach) {
+ 
+             
+            try {
+                const response = await fetch(`/activatecoachweb/${idcoach}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    alert('Coach activated successfully');
+                    // Optionally refresh the page or update the UI
+                    location.reload();
+                } else {
+                    const errorText = await response.text();
+                    alert('Failed to activate coach: ' + errorText);
+                }
+            } catch (error) {
+                console.error('Error activating coach:', error);
+                alert('An error occurred while activating the coach');
+            }
+        }
+
+        async function deleteCoach(idcoach) {
+            // Implement the logic to delete the coach.
+            try {
+                const response = await fetch(`/deletecoachweb/${idcoach}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    alert('Coach Deleted successfully');
+                    // Optionally refresh the page or update the UI
+                    location.reload();
+                } else {
+                    const errorText = await response.text();
+                    alert('Failed to Delete coach: ' + errorText);
+                }
+            } catch (error) {
+                console.error('Error Deleting coach:', error);
+                alert('An error occurred while Deleting the coach');
+            }
+        }
+    </script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Show Coaches</title>
+    <style>
+        html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+        .mySlides {display:none}
+        .w3-tag, .fa {cursor:pointer}
+        .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .container {
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-wrap: wrap;
+            /* justify-content: center; */
+            padding: 20px;
+        }
+        
+        .card-container {
+            perspective: 1000px;
+            margin: 10px;
+            display: inline-block;
+        }
+        
+        .card {
+            width: 300px;
+            height: 650px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        
+        .card img {
+            width: 100%;
+            height: 250px;
+            margin-top: 50px;
+        }
+        
+        .card h2 {
+            padding-top: 0px;     
+            padding-bottom: 3px;
+        }
+        
+        .card .front, .card .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        
+        .card .front {
+            z-index: 2;
+        }
+        
+        .card .back {
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .card-container.flipped .card {
+            transform: rotateY(180deg);
+        }
+        
+        .details-btn, .action-btn {
+            cursor: pointer;
+            padding: 5px 10px;
+            margin-top: 10px;
+            border: none;
+            color: white;
+            border-radius: 3px;
+        }
+        
+        .details-btn {
+            background-color: #007BFF;
+        }
+        
+        .action-btn {
+            background-color: #28a745; /* Green */
+        }
+        
+        .delete-btn {
+            background-color: #dc3545; /* Red */
+        }
+    </style>
+</head>
+<body>
+    <div class="w3-top">
+        <div class="w3-row w3-large w3-light-grey">
+            <div class="w3-col s3">
+                <a href="/ControlPanel" class="w3-button w3-block">Home</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="/CategoryExercise" class="w3-button w3-block">Exercises</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="/home" class="w3-button w3-block">Products</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="/CategoryUserAndCoach" class="w3-button w3-block">Users & Coaches</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <h1>Coaches Informations</h1>
+    <div class="container">
+        <% coaches.forEach(coach => { %>
+            <div class="card-container">
+                <div class="card">
+                    <div class="front">
+                        <h2><%= coach.username %></h2>
+                        <% if (coach.data) { %>
+                            <img src="data:<%= coach.contentType %>;base64,<%= coach.data.toString('base64') %>" alt="coach Image">
+                        <% } else { %>
+                            <p>No image available</p>
+                        <% } %>
+                        <button class="details-btn" onclick="flipCard(event)">Details</button>
+                    </div>
+                    <div class="back">
+                        <p>First Name: <%= coach.firstname %></p>
+                        <p>Last Name: <%= coach.lastname %></p>
+                        <p>Email: <%= coach.email %></p>
+                        <p>Age: <%= coach.age %></p>
+                        <p>Gender: <%= coach.gender %></p>
+                        <p>Years of Experiences: <%= coach.yearsexperiences %></p>
+                        <p>Qual.: <%= coach.qualifications %></p>
+                        <p>Weight: <%= coach.Weight %></p>
+                        <p>Height: <%= coach.height %></p>
+                        <p>Number Of Trainees: <%= coach.Numberoftrainees %></p>
+                        <p>Activate: <%= coach.Activate %></p>
+                        <button class="action-btn" onclick="ActivateCoach('<%= coach.idcoach %>')">Activate Coach</button>
+                        <button class="action-btn delete-btn" onclick="deleteCoach('<%= coach.idcoach %>')">Delete Coach</button>
+                        <button class="details-btn" onclick="flipCard(event)">Back</button>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+    
+    <script>
+        function flipCard(event) {
+            event.stopPropagation();
+            const cardContainer = event.target.closest('.card-container');
+            cardContainer.classList.toggle('flipped');
+        }
+
+        async function ActivateCoach(idcoach) {
+            try {
+                const response = await fetch(`/activatecoachweb/${idcoach}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    alert('Coach activated successfully');
+                    location.reload();
+                } else {
+                    const errorText = await response.text();
+                    alert('Failed to activate coach: ' + errorText);
+                }
+            } catch (error) {
+                console.error('Error activating coach:', error);
+                alert('An error occurred while activating the coach');
+            }
+        }
+
+        async function deleteCoach(idcoach) {
+            try {
+                const response = await fetch(`/deletecoachweb/${idcoach}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    alert('Coach deleted successfully');
+                    location.reload();
+                } else {
+                    const errorText = await response.text();
+                    alert('Failed to delete coach: ' + errorText);
+                }
+            } catch (error) {
+                console.error('Error deleting coach:', error);
+                alert('An error occurred while deleting the coach');
+            }
+        }
+    </script>
+</body>
+</html>

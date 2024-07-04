@@ -1,0 +1,29 @@
+{
+    "project_info": {
+      "project_number": "498712831877",
+      "project_id": "dietchat-2f3a8",
+      "storage_bucket": "dietchat-2f3a8.appspot.com"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:498712831877:android:77334d5709371ca63286ec",
+          "android_client_info": {
+            "package_name": "com.DietWizard.gp"
+          }
+        },
+        "oauth_client": [],
+        "api_key": [
+          {
+            "current_key": "AIzaSyAi8QNmfAliV9ChQg2I03PBDjTAVi3x2Mg"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": []
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Show Users</title>
+    <style>
+        html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+        .mySlides {display:none}
+        .w3-tag, .fa {cursor:pointer}
+        .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+        .card-container {
+            perspective: 1000px;
+            margin: 10px;
+            display: inline-block;
+        }
+        .card {
+            width: 250px;
+            height: 350px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        .card img {
+            width: 100%;
+            height: 250px;
+            margin-top: 50px;
+        }
+        .card h2 {
+            padding-top: 0px;
+            padding-bottom: 3px;
+        }
+        .card .front, .card .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .card .front {
+            z-index: 2;
+        }
+        .card .back {
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .card-container.flipped .card {
+            transform: rotateY(180deg);
+        }
+        .details-btn {
+            cursor: pointer;
+            padding: 5px 10px;
+            margin-top: 40px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 3px;
+        }
+        .action-btn {
+            cursor: pointer;
+            padding: 5px 10px;
+            margin-top: 10px;
+            border: none;
+            background-color: #28a745; /* Green */
+            color: white;
+            border-radius: 3px;
+            width: auto;
+        }
+        .delete-btn {
+            background-color: #dc3545; /* Red */
+        }
+        /* Add styles for scrolling */
+        .container {
+            height: 80vh; /* Set a fixed height */
+            overflow-y: auto; /* Enable vertical scrolling */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <div class="w3-top">
+        <div class="w3-row w3-large w3-light-grey">
+          <div class="w3-col s3">
+            <a href="/ControlPanel" class="w3-button w3-block">Home</a>
+          </div>
+          <div class="w3-col s3">
+            <a href="/CategoryExercise" class="w3-button w3-block">Exercises</a>
+          </div>
+          <div class="w3-col s3">
+            <a href="/home" class="w3-button w3-block">Products</a>
+          </div>
+          <div class="w3-col s3">
+            <a href="/CategoryUserAndCoach" class="w3-button w3-block">Users & Coaches</a>
+        </div>
+    </div>
+
+    <h1>Users</h1>
+    <div class="container">
+        <% users.forEach(user => { %>
+            <div class="card-container">
+                <div class="card">
+                    <div class="front">
+                        <h2><%= user.username %></h2>
+                        <p>First Name: <%= user.firstname %></p>
+                        <p>Last Name: <%= user.lastname %></p>
+                        <p>Email: <%= user.email %></p>
+                        <p>Type: <%= user.type %></p>
+                        <button class="action-btn delete-btn" onclick="deleteUser('<%= user.iduser %>')">Delete User</button>
+                    </div>
+                    <div class="back">
+                        <!-- Details to show on back side if needed -->
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+
+    <script>
+        function flipCard(event) {
+            event.stopPropagation();
+            const cardContainer = event.target.closest('.card-container');
+            cardContainer.classList.toggle('flipped');
+        }
+
+        async function deleteUser(iduser) {
+            try {
+                const response = await fetch(`/deleteusers/${iduser}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    alert('User deleted successfully');
+                    location.reload();
+                } else {
+                    const errorText = await response.text();
+                    alert('Failed to delete user: ' + errorText);
+                }
+            } catch (error) {
+                console.error('Error deleting user:', error);
+                alert('An error occurred while deleting the user');
+            }
+        }
+    </script>
+</body>
+</html>

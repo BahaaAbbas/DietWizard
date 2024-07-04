@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Category Exercises</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    html, body {
+        font-family: "Lato", sans-serif;
+        overflow: auto;  
+        height: auto;  
+    }
+
+    .mySlides {display:none}
+    .w3-tag, .fa {cursor:pointer}
+    .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+
+    .card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        margin: 20px;
+        width: 300px;
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        height: 430px;
+    }
+    .card img {
+        max-width: 100%;
+        height: auto;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; /* Ensure items start from the top */
+        flex-wrap: wrap;
+        margin: 20px;
+    }
+    .button1 {
+        margin-top: 11px;
+        background-color: #2196F3
+    }
+    .test {
+        margin-top: 34px;
+        
+    }
+</style>
+<body>
+    <div class="w3-top">
+        <div class="w3-row w3-large w3-light-grey">
+          <div class="w3-col s3">
+            <a href="/ControlPanel" class="w3-button w3-block">Home</a>
+          </div>
+          <div class="w3-col s3">
+            <a href="/CategoryExercise" class="w3-button w3-block">Exercises</a>
+          </div>
+          <div class="w3-col s3">
+            <a href="/home" class="w3-button w3-block">Products</a>
+          </div>
+          <div class="w3-col s3">
+            <a href="/CategoryUserAndCoach" class="w3-button w3-block">Users & Coaches</a>
+          </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="card">
+            <img src="all.png" alt="Image 1">
+            <h2 class="test">Show All Exercises</h2>
+            <a href="/exercises"><button style="background-color: #2196F3">Exercises</button></a>
+        </div>
+        <div class="card">
+            <img src="list.webp" alt="Image 2">
+            <h2>Category</h2>
+            <a href="/filter"><button class="button1">Category Of Exercises</button></a>
+        </div>
+    </div>
+
+    <h2>Add Category Exercise</h2>
+    <form action="/CategoryExercise" method="post">
+        <label for="type">Type of Exercise:</label>
+        <select id="type" name="type">
+            <option value=""></option>
+            <option value="Abs">Abs</option>
+            <option value="Arms">Arms</option>
+            <option value="Back">Back</option>
+            <option value="Cardio">Cardio</option>
+            <option value="Chest">Chest</option>
+            <option value="Legs">Legs</option>
+            <option value="Shoulders">Shoulders</option>
+        </select><br><br>
+        <label for="numbers">Numbers of Exercises (comma-separated):</label>
+        <input type="text" id="numbers" name="numbers" required><br><br>
+        <input type="submit" value="Add Exercise" style="background-color: #2196F3">
+    </form>
+
+    <h2>Delete Category Exercise</h2>
+    <form action="/removeExercise" method="post">
+        <label for="typeToDelete">Type of Exercise:</label>
+        <select id="typeToDelete" name="type">
+            <option value=""></option>
+            <option value="Abs">Abs</option>
+            <option value="Arms">Arms</option>
+            <option value="Back">Back</option>
+            <option value="Cardio">Cardio</option>
+            <option value="Chest">Chest</option>
+            <option value="Legs">Legs</option>
+            <option value="Shoulders">Shoulders</option>
+        </select><br><br>
+        <label for="numberToRemove">Number to Remove:</label>
+        <input type="text" id="numberToRemove" name="numberToRemove" required><br><br>
+        <input type="submit" value="Remove Exercise" style="background-color: #2196F3">
+    </form>
+    
+
+
+
+
+
+    <footer class="w3-container w3-padding-32 w3-light-grey w3-center">
+        <!-- <h4>Footer</h4> -->
+        <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+        <div class="w3-xlarge w3-section">
+          <i class="fa fa-facebook-official w3-hover-opacity"></i>
+          <i class="fa fa-instagram w3-hover-opacity"></i>
+          <i class="fa fa-snapchat w3-hover-opacity"></i>
+          <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+          <i class="fa fa-twitter w3-hover-opacity"></i>
+          <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+        <!-- <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p> -->
+      </footer>
+
+      
+
+      
+</body>
+</html>
