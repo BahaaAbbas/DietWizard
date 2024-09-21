@@ -15,6 +15,7 @@ Software Graduation Project
 
 -Technologies Database: MongoDB / Firebase.
 
--Course: Graduation Project (Second, 2024).
+-Software Graduation Report
+https://drive.google.com/file/d/1ibov0j_kOAX2_pAa8QX-296ycYdD2Z9E/view?usp=sharing
 
 
